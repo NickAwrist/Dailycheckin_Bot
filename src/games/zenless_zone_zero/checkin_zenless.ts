@@ -17,13 +17,14 @@ export async function zzzCheckin(profile: Profile): Promise<string> {
         const header = {
             Cookie: cookies,
             'Accept': 'application/json, text/plain, */*',
-            'Accept-Encoding': 'gzip, deflate, br',
             'Connection': 'keep-alive',
-            'x-rpc-app_version': '2.34.1',
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36',
-            'x-rpc-client_type': '4',
-            'Referer': 'https://act.hoyolab.com/',
+            'Host': 'sg-public-api.hoyolab.com',
             'Origin': 'https://act.hoyolab.com',
+            'Referer': 'https://act.hoyolab.com/',
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36',
+            'x-rpc-client_type': '5',
+            'x-rpc-platform': '4',
+            'x-rpc-signgame': 'zzz',
         };
 
         const options: RequestInit = {
