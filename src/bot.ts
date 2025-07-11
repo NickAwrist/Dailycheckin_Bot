@@ -19,11 +19,7 @@ const client = new Client({ intents: [
     GatewayIntentBits.DirectMessages
 ]});
 
-// Process environment variables
-const environment: string = process.argv[2] || 'development';
-dotenv.config({ path: `.env.${environment}` });
-
-logger.info(`Loaded environment file: .env.${environment}`);
+dotenv.config();
 
 // Bot environment variables
 export const config = {
