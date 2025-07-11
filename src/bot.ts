@@ -11,6 +11,7 @@ import {handleModalSubmit} from "./interactions/modalSubmit";
 import {getTotalUsers} from "./database/userRepository";
 import {initMetrics, updateBotHeartbeat, updateTotalGuilds, updateTotalUsers} from "./utils/metrics";
 import {startMetricsServer} from "./utils/metricsServer";
+import express from 'express';
 
 
 // Create client object and list intents
@@ -35,6 +36,16 @@ if(!config.TOKEN || !config.CLIENT_ID || !config.BOT_ADMIN_ID || !config.MONGO_U
     logger.error('Missing environment variables');
     process.exit(1);
 }
+
+const expApp = express();
+expApp.get('/', (req, res) => {
+    res.status(200).send('I am alive dont kill me')
+})
+
+expApp.listen(8080, () => {
+    logger.info('Express server is running on port 8080');
+})
+
 
 // When ready
 client.on('ready', async () => {
