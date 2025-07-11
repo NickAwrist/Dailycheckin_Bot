@@ -2,7 +2,7 @@ import crypto from 'crypto';
 import dotenv from "dotenv";
 import logger from "./logger";
 
-dotenv.config({ path: '.env.encryption' });
+dotenv.config();
 
 const algorithm = 'aes-256-cbc';
 const key = Buffer.from(process.env.ENCRYPTION_KEY || 'missing', 'utf8');
